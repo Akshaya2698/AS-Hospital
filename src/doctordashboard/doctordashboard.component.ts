@@ -80,8 +80,6 @@ export class DoctordashboardComponent implements OnInit {
       }
     });
 
-    console.log("detailsofclient", this.detailsOfClient);
-
     var pageDetails = localStorage.getItem('savedDoctor') || '';
 
     if(pageDetails != '' && pageDetails != undefined) {
