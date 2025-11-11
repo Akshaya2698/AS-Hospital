@@ -1,0 +1,22 @@
+[
+    {
+        "question": "Is my data kept private and confidential?",
+        "answer": "Absolutely. We use industry-standard encryption protocols (like HIPAA/GDPR compliance) to ensure all personal inputs, session data, and mood logs are encrypted and stored securely. We do not sell or share your data with third parties."
+    },
+    {
+        "question": "Is the communication with therapists/coaches secure?",
+        "answer": "Yes. All communication within the app uses end-to-end encryption to ensure that only you and your designated professional can access your messages and video sessions."
+    },
+    {
+        "question": "What should I do in a mental health crisis or emergency?",
+        "answer": "This app is NOT for emergencies. If you are experiencing a mental health crisis, please immediately call 911 (or your local emergency number) or visit your nearest emergency room."
+    },
+    {
+        "question": "Does my health insurance cover the subscription cost?",
+        "answer": "Most wellness apps are not covered by standard health insurance. However, some Flexible Spending Accounts (FSA) or Health Savings Accounts (HSA) may cover the cost. Please check with your provider."
+    },
+    {
+        "question": "What are the main benefits?",
+        "answer": "Teletherapy offers great convenience (attending from home), accessibility (especially for those in rural areas or with mobility issues), and often reduced costs (saving on travel and childcare)."
+    }
+]

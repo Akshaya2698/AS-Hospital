@@ -1,0 +1,205 @@
+<div class="mainSignUp">
+    <div class="title">
+        Skip the waiting room. <strong>SIGN UP</strong> to chat.
+    </div>
+    <div class="sub-title">
+        Get answers, not guesswork. Connect with certified physicians for clear advice.
+    </div>
+    <div class="formVisible" *ngIf="!success">
+        <div id="invalidPopup" *ngIf="SignupFormGroup.invalid"></div>
+        <form [formGroup]="SignupFormGroup" class="signup" (ngSubmit)="signup()">
+            <div class="topFields col-md-12">
+                <div class="topFields-left col-md-6">
+                    <div class="groupsForInput">
+                        <label>
+                            First Name: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <input type="text" id="fname" class="inputField" placeholder="Enter your first name" autocomplete="off" formControlName="firstname"/>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('firstname')?.invalid && SignupFormGroup.get('firstname')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('firstname')?.hasError('required')">Please Enter First Name</div>
+                    </div>
+                    <div class="groupsForInput">
+                        <label>
+                            Last Name:
+                        </label>
+                        <br/>
+                        <input type="text" id="lname" class="inputField" placeholder="Enter your last name" autocomplete="off" formControlName="lastname"/>
+                    </div>
+                    <div class="groupsForInput smallInputFields">
+                        <div class="col-md-6">
+                            <label>
+                                Gender: <span class="mandatory">*</span>
+                            </label>
+                            <br/>&nbsp;&nbsp;&nbsp;
+                            <input type="radio" id="radio1" name="gender" value="Male" formControlName="gender"/>
+                            <label for="radio1">Male</label>
+                            &nbsp;
+                            <input type="radio" id="radio2" name="gender" value="Female" formControlName="gender"/>
+                            <label for="radio2">Female</label>
+                        </div>
+                        <div class="col-md-6">
+                            <label>
+                                Age: <span class="mandatory">*</span>
+                            </label>
+                            <br/>
+                            <input type="number" id="age" class="inputField ageField" placeholder="Enter your age" autocomplete="off" formControlName="age"/>
+                            <div class="errormsg" *ngIf="(SignupFormGroup.get('age')?.invalid && SignupFormGroup.get('age')?.touched)">
+                                <div *ngIf="SignupFormGroup.get('age')?.hasError('required')">Please Enter Age</div>
+                            </div>
+                            <div class="errormsg" *ngIf="(SignupFormGroup.get('age')?.invalid && SignupFormGroup.get('age')?.touched)">
+                                <div *ngIf="SignupFormGroup.get('age')?.hasError('pattern')">Invalid Age</div>
+                            </div>
+                        </div>
+                    </div>                
+                    <div class="groupsForInput">
+                        <label>
+                            Phone Number: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <select id="phcode" class="phcode">
+                            <option *ngFor="let code of codes">
+                                {{code.CountryCode}}
+                            </option>
+                        </select>
+                        <input type="text" id="phno" class="inputField phField" placeholder="Enter your phone number" autocomplete="off" formControlName="phonenumber"/>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('phonenumber')?.invalid && SignupFormGroup.get('phonenumber')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('phonenumber')?.hasError('required')">Please Enter Phone Number</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('phonenumber')?.invalid && SignupFormGroup.get('phonenumber')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('phonenumber')?.hasError('maxlength') || SignupFormGroup.get('phonenumber')?.hasError('minlength')">Invalid Phone Number</div>
+                    </div>
+                </div>
+                <div class="topFields-right  col-md-6">
+                    <div class="groupsForInput">
+                        <label>
+                            Location: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <input type="text" id="location" class="inputField" placeholder="Enter your residential place or area" autocomplete="off" formControlName="location"/>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('location')?.invalid && SignupFormGroup.get('location')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('location')?.hasError('required')">Please Enter Location</div>
+                    </div>
+                    <div class="groupsForInput">
+                        <label>
+                            Email ID: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <input type="email" id="email" class="inputField" placeholder="Enter your email id" autocomplete="off" formControlName="emailid"/>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('emailid')?.invalid && SignupFormGroup.get('emailid')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('emailid')?.hasError('required')">Please Enter Email ID</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('emailid')?.invalid && SignupFormGroup.get('emailid')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('emailid')?.hasError('email')">Invalid Email ID</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('emailid')?.invalid && SignupFormGroup.get('emailid')?.touched)">
+                        <div *ngIf="!SignupFormGroup.get('emailid')?.hasError('email') && SignupFormGroup.get('emailid')?.hasError('pattern')">Enter in Proper Email ID Format</div>
+                    </div>
+                    <div class="groupsForInput">
+                        <label>
+                            Password: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <div class="passwordDiv">
+                            <input type="password" id="password" class="inputField" placeholder="Enter your password" autocomplete="off" formControlName="password" *ngIf="!passwordVisible"/>
+                            <input type="text" id="password" class="inputField" placeholder="Enter your password" autocomplete="off" formControlName="password" *ngIf="passwordVisible"/>
+                            <i [ngClass]="!passwordVisible ? 'bi-eye' : 'bi-eye-slash'" (click)="togglePasswordVisibility()"></i>
+                        </div>
+                    </div>
+
+                    <!-- Existing Validators -->
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('required')">Please Enter Password</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('pattern')">Invalid Password</div>
+                    </div>
+                    
+                    <!-- Custom Validators -->
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('req')">Password is required</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('nocaps')">Password must have atleast 1 Capital Letter</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('nosmall')">Password must have atleast 1 Lowercase Letter</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('nospl')">Password must have atleast 1 Special Character</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('password')?.invalid && SignupFormGroup.get('password')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('password')?.hasError('nonum')">Password must have atleast 1 Number</div>
+                    </div>
+                    
+                    <div class="groupsForInput">
+                        <label>
+                            Confirm Password: <span class="mandatory">*</span>
+                        </label>
+                        <br/>
+                        <div class="cpasswordDiv">
+                            <input type="password" id="cpassword" class="inputField" placeholder="Enter your password to confirm" autocomplete="off" formControlName="confirmpassword" *ngIf="!cpasswordVisible"/>
+                            <input type="text" id="cpassword" class="inputField" placeholder="Enter your password to confirm" autocomplete="off" formControlName="confirmpassword" *ngIf="cpasswordVisible"/>
+                            <i [ngClass]="!cpasswordVisible ? 'bi-eye' : 'bi-eye-slash'" (click)="toggleCPasswordVisibility()"></i>
+                        </div>
+                    </div>
+
+                    <!-- Existing Validators -->
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('confirmpassword')?.invalid && SignupFormGroup.get('confirmpassword')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('confirmpassword')?.hasError('required')">Please Re-Enter Password</div>
+                    </div>
+
+                    <!-- Custom Validators -->
+                    <div class="errormsg" *ngIf="SignupFormGroup.get('confirmpassword')?.touched">
+                        <div *ngIf="!SignupFormGroup.get('confirmpassword')?.hasError('required') && SignupFormGroup.hasError('matchError')">Passwords did not match</div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottomFields">
+                <div class="groupsForInput">
+                    <label>
+                        Presenting Illness: <span class="mandatory">*</span>
+                    </label>
+                    <br/>
+                    <textarea id="illness" class="inputField" placeholder="Enter your presenting illness" formControlName="presentingillness"></textarea>
+                </div>
+                <div class="rangeOrerror">
+                    <div class="textareaRange">
+                        <!-- {{SignupFormGroup.get('presentingillness')?.value.length}}/{{maxChars}} -->
+                        {{currentChars}}/{{maxChars}}
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('presentingillness')?.invalid && SignupFormGroup.get('presentingillness')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('presentingillness')?.hasError('required')">Please Enter Your Current Illness</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('presentingillness')?.invalid && SignupFormGroup.get('presentingillness')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('presentingillness')?.hasError('minlength')">Minimum of 10 Characters is required</div>
+                    </div>
+                    <div class="errormsg" *ngIf="(SignupFormGroup.get('presentingillness')?.invalid && SignupFormGroup.get('presentingillness')?.touched)">
+                        <div *ngIf="SignupFormGroup.get('presentingillness')?.hasError('maxlength')">Maximum of 5000 Characters is only allowed</div>
+                    </div>
+                </div>
+                <div class="groupsForInput">
+                    <label>
+                        Medical History (if any): 
+                    </label>
+                    <br/>
+                    <textarea id="history" class="inputField" placeholder="Enter your medical history" formControlName="medicalhistory"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="submit" ngbTooltip="Sign Up">Sign Up</button>
+            <button type="button" class="submit cancel" (click)="reset()">Cancel</button>
+        </form>
+    </div>
+    <div class="loader" *ngIf="loaderVisible">
+        <img class="loading" src="/loading.gif" />
+    </div>
+    <div id="successfulSignUp" *ngIf="success">
+        Signup Successful !! 
+        <br />
+        Please Wait... Navigating you to Login Page !
+    </div>
+</div>

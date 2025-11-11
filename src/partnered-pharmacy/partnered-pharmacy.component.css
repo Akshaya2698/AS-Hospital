@@ -1,0 +1,81 @@
+/* width not fixed and transform carousel */
+.mainPartneredPharmacy {
+    position: relative;
+    height: 22vw;
+    margin-bottom: 2vw;
+    width: 32vw;
+}
+
+.title {
+    position: relative;
+    left: 5.5vw;
+    font-size: 2vw;
+    font-weight: 700;
+    color: cadetblue;
+}
+
+.pharmacy-img {
+    border: 0.2vw solid cadetblue;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    top: 3vw;
+    left: 11vw;
+    overflow: hidden;
+    width: 75vw;
+}
+
+.pharmacy-details {
+    font-size: 1.2vw;
+}
+
+.carousel-slides {
+    margin-left: 1vw;
+    margin-right: 1vw;
+    min-width: 23vw;
+    transition: transform 2s ease-in-out;
+}
+
+.prev {
+    position: absolute;
+    top: 7vw;
+    left: 6vw;
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    color: black;
+}
+
+.next {
+    position: absolute;
+    top: 7vw;
+    left: 84vw;
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    color: black;
+}
+
+.pharmacy-name {
+    font-size: 1.7vw;
+    font-weight: 600;
+    color: cadetblue;
+    text-align: center;
+    margin-top: 1vw;
+}
+
+.pharmacy-desc {
+    text-align: center;
+    font-size: 1.2vw;
+    margin-bottom: 0vw;
+}
+
+.disabledArrow {
+    color: lightgray;
+}
+
+.enabledArrow {
+    color: cadetblue;
+}

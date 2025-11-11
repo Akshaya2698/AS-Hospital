@@ -1,0 +1,151 @@
+<!-- Template Driven Form -->
+<!-- Client Login -->
+<div class="mainLogin" *ngIf="person!='doctor'">
+    <div class="title client-title">CLIENT LOGIN</div>
+    <div id="successfulPopup" *ngIf="isModalOpen">
+        Password Reset Successful !!
+    </div>
+
+    <form #loginForm="ngForm" (ngSubmit)="submit()">
+        <p class="labelText">
+            <label for="username">Username</label>
+            <span class="mandatory">*</span>
+        </p>
+        <input type="text" id="uname" name="uname" placeholder="Enter Registered Phone Number" 
+        [(ngModel)]="user.username"
+        #usernamemodel="ngModel"
+        required
+        pattern="^[0-9]{1,}$" 
+        autocomplete="off" />
+        <div class="errormsg" *ngIf="usernamemodel.invalid && (usernamemodel.dirty || usernamemodel.touched)">
+            <p class="errormsg" *ngIf="usernamemodel.errors?.['required']">
+                Enter a valid Username
+            </p>
+            <p class="errormsg" *ngIf="usernamemodel.errors?.['pattern']">
+                Only numbers are allowed
+            </p>
+        </div>
+        <p class="errormsg" *ngIf="!usernamemodel.errors?.['pattern'] && user.username.length > 10">
+            Max 10 digits
+        </p>
+        <p class="labelText">
+            <label for="password">Password</label>
+            <span class="mandatory">*</span>
+        </p>
+        <div class="pswd">
+            <input [type]="showPassword ? 'text' : 'password'" id="pswd" name="pswd" placeholder="Enter Password"
+            [(ngModel)]="user.password" 
+            #passwordmodel="ngModel"
+            required 
+            autocomplete="off" />
+            <i class="pswd-eye" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'" (click)="togglePasswordVisibility()"></i>
+        </div>
+        <div class="errormsg" *ngIf="passwordmodel.invalid && (passwordmodel.dirty || passwordmodel.touched)">
+            <p class="errormsg" *ngIf="passwordmodel.errors?.['required']">
+                Enter a Password
+            </p>
+        </div>
+        <div class="forgotPswd">
+            <button type="button" class="forgotpwd" (click)="forgotpswd('client')">Forgot Password?</button>
+        </div>
+        <div class="captcha">
+            <label class="random-captcha">{{generatedCaptcha}}</label>
+            <span class="mandatory">*</span>
+            <button type="button" (click)="generateCaptcha()">
+                <img class="refresh-img" src="/images/refresh.jpg" />
+            </button>
+            <div class="input-captcha">
+                <input type="text" id="captcha" name="captcha"
+                [(ngModel)]="user.captcha" 
+                #captchamodel="ngModel"
+                required 
+                autocomplete="off" />
+            </div>
+        </div>
+        <div class="errormsg" *ngIf="captchamodel.invalid && (captchamodel.dirty || captchamodel.touched)">
+            <p class="errormsg" *ngIf="captchamodel.errors?.['required']">
+                Please enter captcha
+            </p>
+        </div>
+        <div class="errormsg" id="captcha-wrong" style="display: none;" *ngIf="!captchamodel.errors?.['required']">
+            <p class="errormsg" id="captcha-wrong-error-msg"></p>
+        </div>
+        <div>
+            <button class="submit" [ngStyle]="{'pointer-events' : loginForm.valid ? 'auto' : 'none'}">Login</button>
+        </div>
+    </form>
+</div>
+
+<!-- Doctor Login -->
+<div class="mainLogin" *ngIf="person=='doctor'">
+    <div class="title doctor-title">DOCTOR LOGIN</div>
+    <form #loginForm="ngForm" (ngSubmit)="submit('doctor')">
+        <p class="labelText">
+            <label for="username">Username</label>
+            <span class="mandatory">*</span>
+        </p>
+        <input type="text" id="uname" name="uname" placeholder="Enter Registered Phone Number" 
+        [(ngModel)]="user.username"
+        #usernamemodel="ngModel"
+        required
+        maxlength="10"
+        pattern="^[0-9]{1,}$" 
+        autocomplete="off" />
+        <div class="errormsg" *ngIf="usernamemodel.invalid && (usernamemodel.dirty || usernamemodel.touched)">
+            <p class="errormsg" *ngIf="usernamemodel.errors?.['required']">
+                Enter a valid Username
+            </p>
+            <p class="errormsg" *ngIf="usernamemodel.errors?.['pattern']">
+                Only numbers are allowed
+            </p>
+        </div>
+        <p class="labelText">
+            <label for="password">Password</label>
+            <span class="mandatory">*</span>
+        </p>
+        <div class="pswd">
+            <input [type]="showPassword ? 'text' : 'password'" id="pswd" name="pswd" placeholder="Enter Password"
+            [(ngModel)]="user.password" 
+            #passwordmodel="ngModel"
+            required 
+            autocomplete="off"/>
+            <i class="pswd-eye" [ngClass]="showPassword ? 'bi-eye-slash' : 'bi-eye'" (click)="togglePasswordVisibility()"></i>
+        </div>
+        <div class="errormsg" *ngIf="passwordmodel.invalid && (passwordmodel.dirty || passwordmodel.touched)">
+            <p class="errormsg" *ngIf="passwordmodel.errors?.['required']">
+                Enter a Password
+            </p>
+        </div>
+        <p class="errormsg" *ngIf="!usernamemodel.errors?.['pattern'] && user.username.length > 10">
+            Max 10 digits
+        </p>
+        <div class="forgotPswd">
+            <button type="button" class="forgotpwd" (click)="forgotpswd('doctor')">Forgot Password?</button>
+        </div>
+        <div class="captcha">
+            <label class="random-captcha">{{generatedCaptcha}}</label>
+            <span class="mandatory">*</span>
+            <button type="button" (click)="generateCaptcha()">
+                <img class="refresh-img" src="/images/refresh.jpg" />
+            </button>
+            <div class="input-captcha">
+                <input type="text" id="captcha" name="captcha"
+                [(ngModel)]="user.captcha"
+                #captchamodel="ngModel"
+                required 
+                autocomplete="off" />
+            </div>
+        </div>
+        <div class="errormsg" *ngIf="captchamodel.invalid && (captchamodel.dirty || captchamodel.touched)">
+            <p class="errormsg" *ngIf="captchamodel.errors?.['required']">
+                Please enter captcha
+            </p>
+        </div>
+        <div class="errormsg" id="captcha-wrong" style="display: none;" *ngIf="!captchamodel.errors?.['required']">
+            <p class="errormsg" id="captcha-wrong-error-msg"></p>
+        </div>
+        <div>
+            <button class="submit" [ngStyle]="{'pointer-events' : loginForm.valid ? 'auto' : 'none'}">Login</button>
+        </div>
+    </form>
+</div>

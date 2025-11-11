@@ -1,0 +1,357 @@
+.mainDoctorDashboard {
+    position: relative;
+    height: auto;
+    left: 5vw;
+    top: 13vw;
+    width: 88vw;
+}
+
+.title {
+    font-weight: 700;
+    color: cadetblue;
+    position: absolute;
+    top: -12vw;
+    font-size: 2vw;
+    left: 34vw;
+}
+
+.myprofile {
+    position: relative;
+    left: 81vw;
+    top: -8vw;
+    color: white;
+    font-size: 1.2vw;
+    font-weight: 600;
+    background-color: cadetblue;
+    border: none;
+    padding: 0.5vw;
+    border-radius: 3vw;
+    height: 3vw;
+    width: 10vw;
+}
+
+.prof-img {
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+    position: relative;
+    left: -0.2vw;
+}
+
+.myprofile span {
+    position: relative;
+    top: 0.1vw;
+}
+
+.doctorProfileTitle, .clientListTitle {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 600;
+    color: cadetblue;
+}
+
+.detail {
+    position: relative;
+    top: 2vw;
+    left: 10vw;
+    display: flex;
+    width: 65vw;
+}
+
+.c-details .detail {
+    border-top: 0.1vw solid rebeccapurple;
+    border-bottom: 0.1vw solid rebeccapurple;
+    padding-left: 1vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+}
+
+.detail label {
+    color: cadetblue;
+    font-weight: 600;
+    margin-right: 1vw;
+}
+
+.d-details {
+    color: #72325e;
+    font-size: 1.2vw;
+}
+
+.client-Details {
+    background-color: aliceblue;
+    position: relative;
+    top: -6vw;
+    padding: 4vw;
+    min-height: 30vw;
+}
+
+.clientListTitle {
+    height: 3vw;
+}
+
+.c-details {
+    color: #72325e;
+    font-size: 1.2vw;
+    position: relative;
+    left: 0.4vw;
+    top: 2vw;
+}
+
+.doctorProfile {
+    background-color: aliceblue;
+    position: relative;
+    top: -6vw;
+    padding: 4vw;
+    height: 36vw;
+}
+
+.d-profileMain {
+    display: flex;
+    position: relative;
+    top: 4vw;
+}
+
+.detail.d-photo {
+    position: relative;
+    width: 18vw;
+}
+
+.detail.d-photo img {
+    width: 18vw;
+    height: 17vw;
+}
+
+.background-blur-active {
+    filter: blur(4px) opacity(0.7);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+body.scroll-lock {
+    overflow: hidden!important;
+}
+
+.edit-details-button {
+    position: relative;
+    top: -3vw;
+    left: -7vw;
+    height: 4vw;
+}
+
+.editBtn:hover {
+    color: cadetblue;
+    background-color: white;
+    font-weight: 700;
+}
+
+.edit-details-button button{
+    width: 10vw;
+    border-radius: 3vw;
+    background-color: cadetblue;
+    color: white;
+    border: none;
+    height: 3vw;
+}
+
+.closeBtn {
+    width: 2vw;
+    height: 2vw;
+    text-align: center;
+    font-size: 1.5vw;
+    position: relative;
+    left: 34vw;
+    top: -2vw;
+    font-weight: 600;
+    color: cadetblue;
+    border: none;
+    background-color: transparent;
+}
+
+.personaldetailsCloseBtn:hover {
+    background-color: white;
+    box-shadow: 0vw 0.2vw 0.3vw cadetblue;
+}
+
+.modal {
+    display: block;
+    width: 50vw;
+    height: 31vw;
+    position: relative;
+    left: 24vw;
+    top: -35vw;
+    background-color: white;
+    box-shadow: 0.5vw 0.5vw 1vw cadetblue;
+    padding: 1vw;
+}
+
+.editdetailsTitle {
+    text-align: center;
+    font-size: 2vw;
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.modal .closeBtn {
+    left: 45vw;
+    top: 0.5vw;
+}
+
+.mainEditDetails .detail {
+    margin-top: 1vw;
+    position: relative;
+    left: 8vw;
+    top: 1vw;
+}
+
+.saveBtn {
+    top: 4vw;
+    left: 21vw;
+    position: relative;
+    color: white;
+    background-color: cadetblue;
+    border: none;
+    border-radius: 3vw;
+    width: 6vw;
+    height: 3vw;
+    font-weight: 600;
+}
+
+.saveBtn:hover {
+    background-color: white;
+    color: cadetblue;
+    border: 0.1vw solid cadetblue;
+    box-shadow: 0.5vw 0.5vw 0vw cadetblue;
+}
+
+.d-detailsInput {
+    width: 21vw;
+}
+
+.client-prof-img {
+    left: 1.3vw;
+    top: -0.1vw;
+    border: 0.2vw solid black;
+}
+
+.personal-details, .task-details {
+    border: none;
+    background-color: transparent;
+    color: cadetblue;
+    position: relative;
+    left: 42vw;
+    top: -3.7vw;
+    margin-right: 2vw;
+    width: 10vw;
+}
+
+.personal-details:hover, .task-details:hover {
+    border: 0.1vw solid cadetblue;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 3vw;
+}
+
+.personaldetail {
+    display: block;
+    width: 48vw!important;
+    left: 8vw;
+    border: none!important;
+}
+
+.c-details-personaldetails {
+    top: 0vw!important;
+    border: none;
+}
+
+.personaldetailsmodal {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 35vw!important;
+    padding-bottom: 6vw;
+}
+
+.personaldetailsCloseBtn {
+    left: 58vw;
+    top: 1vw;
+}
+
+.main-detail {
+    display: flex;
+}
+
+.sub-detail {
+    position: relative;
+    top: 4vw;
+    left: -26.1vw;
+}
+
+.arrow {
+    position: relative;
+    left: 36vw;
+    color: rebeccapurple;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.sub-detail label {
+    width: 6vw;
+}
+
+.sub-detail .c-details-content {
+    width: 35vw;
+    position: relative;
+    top: -1.8vw;
+    left: 7vw;
+}
+
+.c-details-content {
+    margin-bottom: 0vw;
+    width: 20vw;
+}
+
+.main-detail-alignment {
+    align-items: center;
+}
+
+.personaldetail .c-details-content {
+    margin-bottom: 1vw;
+    width: auto;
+}
+
+.d-details .detail {
+    border: none;
+}
+
+::ng-deep .dropdown {
+    display: inline-block;
+    position: relative;
+    left: 67vw;
+}
+
+::ng-deep .dropdown-toggle {
+    border: 0.2vw solid cadetblue;
+    border-radius: 2vw;
+    color: cadetblue;
+    font-size: 1.2vw;
+    font-weight: 600;
+    width: 12vw;
+    background-color: white;
+}
+
+::ng-deep .dropdown-toggle::after {
+    position: absolute;
+    top: 1.1vw;
+    left: 10.5vw;
+}
+
+.remainder {
+    position: relative;
+    left: 30vw;
+    color: rebeccapurple;
+    font-size: 1.5vw;
+    cursor: pointer;
+}
+
+.sub-detail-withbell {
+    left: -27.7vw;
+}

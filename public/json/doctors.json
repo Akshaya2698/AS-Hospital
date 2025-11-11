@@ -1,0 +1,82 @@
+[
+    {
+      "id": "101",
+      "name": "Akshaya",
+      "photo": "/images/femaledoc1.jpg",
+      "specialization": "Child & Adolescent Psychiatry",
+      "designation": "Psy.D. (Clinical Psychology)",
+      "email": "ak@gmail.com",
+      "phonenumber": "8300629829",
+      "password": "As@2621"
+    },
+    {
+      "id": "102",
+      "name": "Sriram",
+      "photo": "/images/maledoc1.jpg",
+      "specialization": "Family Counselling",
+      "designation": "Ph.D. (Counselling Psychology)",
+      "email": "sri@gmail.com",
+      "phonenumber": "9445257520",
+      "password": "Sa@2621"
+    },
+    {
+      "id": "103",
+      "name": "S",
+      "photo": "/images/maledoc2.jpg",
+      "specialization": "School Psychologist",
+      "designation": "Ph.D. (Clinical Psychology)",
+      "email": "s@gmail.com",
+      "phonenumber": "1111111111",
+      "password": "aS@2621"
+    },
+    {
+      "id": "104",
+      "name": "Sriya",
+      "photo": "/images/femaledoc2.jpg",
+      "specialization": "Geriatric Psychiatry",
+      "designation": "M.D.",
+      "email": "a@gmail.com",
+      "phonenumber": "2222222222",
+      "password": "sA@2621"
+    },
+    {
+      "id": "105",
+      "name": "AS",
+      "photo": "/images/maledoc3.jpg",
+      "specialization": "Couple Counselling",
+      "designation": "Ph.D. (Clinical Psychology)",
+      "email": "as143@gmail.com",
+      "phonenumber": "5555555555",
+      "password": "AS@2621"
+    },
+    {
+      "id": "106",
+      "name": "Riya",
+      "photo": "/images/femaledoc3.jpg",
+      "specialization": "General Adult Psychiatry",
+      "designation": "M.D.",
+      "email": "riya@gmail.com",
+      "phonenumber": "6666666666",
+      "password": "aksr@2621"
+    },
+    {
+      "id": "107",
+      "name": "Akshu",
+      "photo": "/images/femaledoc4.jpg",
+      "specialization": "Neuropsychologist",
+      "designation": "Ph.D.",
+      "email": "akshusri@gmail.com",
+      "phonenumber": "7777777777",
+      "password": "Sriram@2621"
+    },
+    {
+      "id": "108",
+      "name": "Ram",
+      "photo": "/images/maledoc4.jpg",
+      "specialization": "Addiction Psychiatry",
+      "designation": "D.O.",
+      "email": "ram@gmail.com",
+      "phonenumber": "8888888888",
+      "password": "Akshaya@2621"
+    }
+]

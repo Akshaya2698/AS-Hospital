@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Family Counselling",
+        "photo": "/images/familycoun.jpg",
+        "description": "Addressing challenges in family dynamics, communication breakdowns, parental conflicts, behavioral issues in children, and major life transitions (e.g., divorce, loss)."
+    },
+    {
+        "name": "Couples Counselling",
+        "photo": "/images/couplecoun.jpg",
+        "description": "Managing conflict, rebuilding trust, addressing infidelity, improving sexual and emotional intimacy, and navigating life stage changes."
+    },
+    {
+        "name": "Career & Stress Management",
+        "photo": "/images/Career&StressManagementCounsellingcoun.jpg",
+        "description": "Managing conflict, rebuilding trust, addressing infidelity, improving sexual and emotional intimacy, and navigating life stage changes."
+    },
+    {
+        "name": "Trauma-Informed Care (Individual)",
+        "photo": "/images/traumacoun.jpg",
+        "description": "Treating Post-Traumatic Stress Disorder (PTSD), Complex Trauma, or recovering from emotional/physical abuse."
+    },
+    {
+        "name": "Anxiety & Mood Disorder Counselling",
+        "photo": "/images/anxietycoun.jpg",
+        "description": "Treating conditions like Generalized Anxiety Disorder (GAD), Social Anxiety, Panic Disorder, Major Depressive Disorder (MDD), and Bipolar Disorder."
+    },
+    {
+        "name": "Youth & Adolescent Counselling",
+        "photo": "/images/youthcoun.jpg",
+        "description": "Dealing with academic stress, bullying, peer pressure, body image issues, emerging identity concerns, and family conflicts typical during adolescence."
+    },
+    {
+        "name": "Substance Abuse & Addiction Counselling",
+        "photo": "/images/substancecoun.jpg",
+        "description": "Addressing misuse of substances (alcohol, drugs), behavioral addictions (gambling, gaming), developing coping mechanisms for cravings, and relapse prevention."
+    }
+]

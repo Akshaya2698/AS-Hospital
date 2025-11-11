@@ -1,0 +1,82 @@
+/* width fixed and slice carousel */
+.mainOurFacilities {
+    position: relative;
+    height: 39vw;
+    margin-bottom: 2vw;
+    width: 32vw;
+}
+
+.title {
+    position: relative;
+    left: 5.5vw;
+    font-size: 2vw;
+    font-weight: 700;
+    color: cadetblue;
+}
+
+.facility-img {
+    width: 17vw;
+    height: 15vw;
+    border: 0.2vw solid cadetblue;
+}
+
+.carousel {
+    display: flex;
+    position: relative;
+    top: 3vw;
+    left: 11vw;
+}
+
+.facility-details {
+    font-size: 1.2vw;
+    width: 17vw;
+    height: 14vw;
+}
+
+.carousel-slides {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.prev {
+    position: relative;
+    top: -15vw;
+    left: 6vw;
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    color: black;
+}
+
+.next {
+    position: relative;
+    top: -15vw;
+    left: 84vw;
+    background-color: transparent;
+    border: none;
+    font-size: 3vw;
+    color: black;
+}
+
+.facility-name {
+    font-size: 1.5vw;
+    font-weight: 600;
+    color: cadetblue;
+    text-align: center;
+    margin-top: 1vw;
+    width: 17vw;
+    min-height: 4.6vw;
+}
+
+.facility-desc {
+    text-align: center;
+    font-size: 1.1vw;
+}
+
+.disabledArrow {
+    color: lightgray;
+}
+
+.enabledArrow {
+    color: cadetblue;
+}

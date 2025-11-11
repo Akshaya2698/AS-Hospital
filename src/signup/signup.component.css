@@ -1,0 +1,207 @@
+.mainSignUp {
+    position: relative;
+    height: 57vw;
+    left: 15vw;
+    top: 13vw;
+    width: 78vw;
+}
+
+.title {
+    font-weight: 700;
+    color: cadetblue;
+    position: absolute;
+    top: -12vw;
+    font-size: 2vw;
+    left: 16vw;
+}
+
+.title strong {
+    font-size: 2.5vw;
+}
+
+.sub-title {
+    left: 12.5vw;
+    position: relative;
+    top: -8.5vw;
+    font-size: 1.3vw;
+    color: #ab43a4;
+    font-weight: 500;
+    width: 48vw;
+}
+
+.signup {
+    position: relative;
+    /* left: 27vw; */
+    top: -5vw;
+}
+
+.topFields {
+    display: flex;
+}
+
+.groupsForInput {
+    margin-bottom: 1vw;
+}
+
+label {
+    font-size: 1.2vw;
+    font-weight: 500;
+    color: purple;
+    margin-bottom: 0.25vw;
+}
+
+.mandatory {
+    color: crimson;
+}
+
+.inputField, .phcode {
+    font-size: 1.2vw;
+    color: cadetblue;
+    font-weight: 400;
+}
+
+.inputField::placeholder {
+    font-size: 0.9vw;
+    position: relative;
+    top: -0.2vw;
+    color: cadetblue;
+    font-weight: 400;
+}
+
+.phcode {
+    height: 2.22vw;
+    padding-right: 1vw;
+    margin-right: 0.25vw;
+}
+
+.inputField {
+    width: 32vw;
+}
+
+.phField {
+    width: 15vw;
+}
+
+textarea {
+    height: 5vw;
+    font-size: 1.2vw;
+}
+
+textarea::placeholder {
+    padding-top: 1.75vw;
+}
+
+.bottomFields textarea {
+    width: 71vw;
+}
+
+.submit {
+    background-color: #5f9ea059;
+    border: none;
+    color: cadetblue;
+    font-weight: 700;
+    margin-right: 1vw;
+    width: 9vw;
+    font-size: 1vw;
+    padding: 0.75vw 1.5vw;
+}
+
+.submit:hover {
+    background-color: #5f9ea0;
+    color: white;
+}
+
+.cancel {
+    color: crimson;
+    background-color: #ed143d63;
+}
+
+.cancel:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.invalidPopup {
+    position: absolute;
+    left: 60vw;
+    top: -7vw;
+    background-color: crimson;
+    color: white;
+    font-size: 1.2vw;
+    width: 21vw;
+    height: 5vw;
+    padding: 1.1vw;
+}
+
+::ng-deep .closebtn {
+    border: none;
+    background-color: crimson;
+    color: black;
+    font-size: 1.5vw;
+    font-weight: 700;
+    position: relative;
+    top: 0.2vw;
+}
+
+.smallInputFields {
+    display: flex;
+}
+
+.ageField {
+    width: 12.5vw;
+}
+
+.errormsg {
+    position: relative;
+    font-size: 1vw;
+    top: -0.75vw;
+    color: red;
+}
+
+.smallInputFields .errormsg {
+    top: 0.2vw;
+}
+
+.textareaRange {
+    position: relative;
+    left: 68vw;
+    top: -1.5vw;
+    font-size: 1vw;
+    color: cadetblue;
+}
+
+.rangeOrerror {
+    display: flex;
+}
+
+.rangeOrerror .errormsg {
+    top: -1vw;
+    left: -3vw;
+}
+
+.bi-eye, .bi-eye-slash {
+    position: relative;
+    left: -2vw;
+    color: cadetblue;
+}
+
+#successfulSignUp {
+    color: cadetblue;
+    font-size: 4vw;
+    position: relative;
+    width: 80vw;
+    text-align: center;
+}
+
+.loader {
+    text-align: center;
+    position: absolute;
+    top: 10vw;
+    top: 6vw;
+    left: 33vw;
+}
+
+.loading {
+    width: 5vw;
+    height: 5vw;
+}

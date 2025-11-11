@@ -1,0 +1,159 @@
+<div class="mainClientDashboard">
+    <div class="title">CLIENT DASHBOARD</div>
+    <div class="client-Details col-md-12" [class.background-blur-active]="isDatePickerClicked || isEditDetails">
+        <div class="left-side-details col-md-6">
+            <div class="detail">
+                <label class="col-md-3"for="name">Name:</label>
+                <p class="c-details" id="name" name="name">{{clientDetails[0].name}}&nbsp;{{clientDetails[0].lastname}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="gender">Gender:</label>
+                <p class="c-details" id="gender" name="gender">{{clientDetails[0].gender}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="age">Age:</label>
+                <p class="c-details" id="age" name="age">{{clientDetails[0].age}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="location">Location:</label>
+                <p class="c-details" id="location" name="location">{{clientDetails[0].location}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="phonenumber">Phone Number:</label>
+                <p class="c-details" id="phonenumber" name="phonenumber">{{clientDetails[0].phonenumber}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="email">Email ID:</label>
+                <p class="c-details" id="email" name="email">{{clientDetails[0].email}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="diagnosis">Diagnosis:</label>
+                <p class="c-details" id="diagnosis" name="diagnosis" *ngIf="clientDetails[0].diagnosis != ''">{{clientDetails[0].diagnosis}}</p>
+                <p class="c-details" id="diagnosis" name="diagnosis" *ngIf="clientDetails[0].diagnosis == ''">Under Clinical Judgement</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="reportingDoctor">Doctor:</label>
+                <p class="c-details" id="reportingDoctor" name="reportingDoctor" *ngIf="clientDetails[0].reportingDoctor != ''">{{clientDetails[0].reportingDoctor}}</p>
+                <p class="c-details" id="reportingDoctor" name="reportingDoctor" *ngIf="clientDetails[0].reportingDoctor == ''">Will be Assigned Soon</p>
+            </div>
+        </div>
+        <div class="right-side-details col-md-6" *ngIf="clientDetails[0].diagnosis != ''">
+            <div class="detail">
+                <label class="col-md-3"for="startDate">Start Date:</label>
+                <p class="c-details" id="startDate" name="startDate">{{clientDetails[0].startDate}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="lastReview">Last Review:</label>
+                <p class="c-details" id="lastReview" name="lastReview">{{clientDetails[0].lastReview}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="actionTaken">Actions Taken:</label>
+                <p class="c-details" id="actionTaken" name="actionTaken">{{clientDetails[0].actionTaken}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="assignedTask">Assigned Task:</label>
+                <p class="c-details" id="assignedTask" name="assignedTask">{{clientDetails[0].assignedTask}}</p>
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="nextReview">Next Review:</label>
+                <p class="c-details" id="nextReview" name="nextReview">{{clientDetails[0].nextReview}}</p>
+            </div>
+            <div class="detail">
+                <button class="modifydateBtn" (click)="datePicker()">Want to Modify Next Review Date ?</button>
+            </div>
+        </div>
+        <div class="right-side-details col-md-6" *ngIf="clientDetails[0].diagnosis == ''"></div>
+        <div class="edit-details-button">
+            <button class="editBtn" (click)="editDetails()">EDIT DETAILS</button>
+        </div>
+    </div>
+    <div class="alertRemainder" *ngIf="clientDetails[0].remainder">
+        YOU HAVEN'T COMPLETED YOUR TASK TODAY.COMPLETE SOON TO AVOID NEGATIVE REINFORCEMENT (LOSING PRIVILAGES).
+    </div>
+    <div class="taskDashboard">
+        <div class="taskDashboardTitle">TASK DASHBOARD</div>
+        <div class="dateOfTask">Date:&nbsp;&nbsp;{{dateToday}}</div>
+        <div class="taskDetails" *ngIf="!submitted">
+            <textarea id="taskContent" name="taskContent" class="taskContent" placeholder="Enter the details of actions you have performed today w.r.t. the task assigned to you!" [(ngModel)]="taskContent" (keyup)="isContentUpdated()"></textarea>
+        </div>
+        <div class="errormsg" id="errormsg" style="display: none;">Please enter details of your actions!</div>
+        <div class="status" *ngIf="isContent && !submitted">
+            <input type="checkbox" id="taskStatus" name="taskStatus" value="" [(ngModel)]="taskStatus" (click)="isTaskCompletedCheckbox()" />
+            &nbsp;
+            <label for="taskStatus">I have Updated everything for today</label>
+        </div>
+        <div class="msg" *ngIf="!submitted">
+            <img class="infoBtn" src="/images/info-icon.jpg"/>
+            If you have not updated the actions completely, please click on <strong>"SAVE"</strong> to save your details from being lost.</div>
+        <div class="taskBtns" *ngIf="!submitted">
+            <button type="button" class="taskSubmitBtn taskSaveBtn"(click)="saveDetails()">Save</button>
+            <button type="button" class="taskSubmitBtn subBtn" [disabled]="!isTaskCompleted" (click)="submitDetails()">Submit</button>
+            <button type="button" class="taskSubmitBtn taskResetBtn" (click)="resetTaskStatus()">Reset</button>
+        </div>
+        <div class="taskCompleted" *ngIf="submitted">
+            Task completed successfully !
+        </div>
+    </div>
+</div>
+
+<!-- Date Picker-->
+<ng-container *ngIf="isDatePickerClicked">
+    <div [ngTemplateOutlet]="datePickerModel"></div>
+</ng-container>
+
+<ng-template #datePickerModel>
+    <div class="datePickerPopup">
+        <button class="closeBtn" (click)="close()">X</button>
+        <div class="datePickerTitle">SELECT DATE</div>  
+        <div class="datePickerField">
+            <input type="date" class="datePickerInputField" id="date" name="date" [(ngModel)]="selectedDate" #newDate="ngModel"/>
+        </div>      
+        <div class="datePickerBtns">
+            <button type="button" class="submitBtn" (click)="sendRequestMail(newDate)">Set</button>
+            <button type="button" class="submitBtn close-Btn" (click)="close()">Cancel</button>
+        </div>
+    </div>
+</ng-template>
+
+<!-- Edit Details -->
+<ng-container *ngIf="isEditDetails">
+    <div [ngTemplateOutlet]="editModel"></div>
+</ng-container>
+
+<ng-template #editModel>
+    <div class="modal">
+        <button class="closeBtn" (click)="close()">X</button>
+        <div class="editdetailsTitle">EDIT DETAILS</div>
+        <div class="mainEditDetails">
+            <div class="detail">
+                <label class="col-md-3"for="fname">First Name:</label>
+                <input class="c-details" id="fname" name="fname" [(ngModel)]="editFirstName" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="lname">Last Name:</label>
+                <input class="c-details" id="lname" name="lname" [(ngModel)]="editLastName" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="age">Age:</label>
+                <input class="c-details" id="age" name="age" [(ngModel)]="editAge" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="gender">Gender:</label>
+                <input class="c-details" id="gender" name="gender" [(ngModel)]="editGender" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="location">Location:</label>
+                <input class="c-details" id="location" name="location" [(ngModel)]="editLocation" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="phonenumber">Phone Number:</label>
+                <input class="c-details" id="phonenumber" name="phonenumber" [(ngModel)]="editNumber" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="email">Email ID:</label>
+                <input class="c-details" id="email" name="email" [(ngModel)]="editEmail" />
+            </div>
+        </div>
+        <button class="saveBtn" (click)="saveEditDetails()">Save</button>
+    </div>
+</ng-template>

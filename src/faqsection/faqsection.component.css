@@ -1,0 +1,46 @@
+.mainFAQ {
+    height: 36vw;
+}
+
+.header {
+    display: flex;
+}
+
+.question {
+    margin-bottom: 0vw;
+    font-size: 1.2vw;
+    font-weight: 600;
+}
+
+.accordion {
+    width: 80vw;
+    position: relative;
+    left: 9vw;
+    top: 5vw;
+}
+
+.title {
+    position: absolute;
+    left: 5.5vw;
+    font-size: 2vw;
+    font-weight: 700;
+    color: cadetblue;
+}
+
+.accordion-button {
+    background-color: cadetblue;
+    color: aliceblue;
+}
+
+.accordion-body {
+    color: cadetblue;
+    background-color: aliceblue;
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='white' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='m2 5 6 6 6-6'/%3e%3c/svg%3e");   /* changed stroke color for changing the arrow color */
+}

@@ -1,0 +1,21 @@
+<div class="mainMeetOurDoctors">
+    <div class="title">MEET THE MINDS BEHIND YOUR BEST HEALTH</div>
+    <div class="explore" *ngIf="!exploring">
+        <img class="doc-bg-img" src="/images/meet-our-doc.jpg"/>
+        <button class="explore-button" (click)="explore()">Explore 
+            <i class="bi bi-arrow-right explore-right-arrow"></i>
+        </button>
+    </div>
+    <div class="exploring-doctors" *ngIf="exploring">
+        <ngb-carousel [wrap]="true"[showNavigationIndicators]="true" style="height: 10vw;">
+            <ng-template ngbSlide *ngFor="let doc of doctorsList; let i=index">
+                <img class="doc-img" [src]="doc.photo" />
+                <div class="profile">
+                    <p>Dr. {{doc.name}}</p>
+                    <p>{{doc.specialization}}</p>
+                    <p>{{doc.designation}}</p>
+                </div>
+            </ng-template>
+        </ngb-carousel>
+    </div>
+</div>

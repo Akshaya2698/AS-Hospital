@@ -1,0 +1,18 @@
+<div class="mainWhatsEveryoneSaying">
+    <div class="title">WHAT'S EVERYONE SAYING</div>
+    <div class="carousel">
+        <div class="carousel-slides" *ngFor="let slide of feedback">
+            <div class="feedback-details">
+                <p class="feedback-content">"{{slide.content}}"</p>
+                <br/>
+                <p class="feedback-rating">Rating: {{slide.rating}}</p>
+            </div>
+        </div>
+    </div>
+    <button class="prev" (click)="previous()" [disabled]="isDisableLeft ? true : false">
+        <i class="bi bi-chevron-left" [ngClass]="isDisableLeft ? 'disabledArrow' : 'enabledArrow'"></i>
+    </button>
+    <button class="next" (click)="next()" [disabled]="isDisableRight ? true : false">
+        <i class="bi bi-chevron-right" [ngClass]="isDisableRight ? 'disabledArrow' : 'enabledArrow'"></i>
+    </button>
+</div>

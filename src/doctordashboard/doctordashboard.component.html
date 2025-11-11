@@ -1,0 +1,160 @@
+<div class="mainDoctorDashboard">
+    <div class="title">DOCTOR DASHBOARD</div>
+    <button class="myprofile" (click)="profile()" *ngIf="!isProfile">
+        <img class="prof-img" src="/images/profile-img.png" />
+        <span>MY PROFILE</span>
+    </button>
+    <button class="myprofile" (click)="client()" *ngIf="isProfile">
+        <span>CLIENTS</span>
+        <img class="prof-img client-prof-img" src="/images/client-profile-img.png" />
+    </button>
+    <div class="doctorProfile" *ngIf="isProfile" [class.background-blur-active]="isEditDetails">
+        <div class="doctorProfileTitle">MY PROFILE</div>
+        <div class="d-profileMain">
+            <div class="d-details col-md-8">
+                <div class="detail">
+                    <label class="col-md-3"for="id">Id:</label>
+                    <p class="d-details" id="id" name="id">{{doctorDetails[0].id}}</p>
+                </div>
+                <div class="detail">
+                    <label class="col-md-3"for="name">Name:</label>
+                    <p class="d-details" id="name" name="name">{{doctorDetails[0].name}}</p>
+                </div>
+                <div class="detail">
+                    <label class="col-md-3"for="specialization">Specialization:</label>
+                    <p class="d-details" id="specialization" name="specialization">{{doctorDetails[0].specialization}}</p>
+                </div>
+                <div class="detail">
+                    <label class="col-md-3"for="designation">Designation:</label>
+                    <p class="d-details" id="designation" name="designation">{{doctorDetails[0].designation}}</p>
+                </div>
+                <div class="detail">
+                    <label class="col-md-3"for="email">Email Id:</label>
+                    <p class="d-details" id="email" name="email">{{doctorDetails[0].email}}</p>
+                </div>
+                <div class="detail">
+                    <label class="col-md-3"for="phonenumber">Phone Number:</label>
+                    <p class="d-details" id="phonenumber" name="phonenumber">{{doctorDetails[0].phonenumber}}</p>
+                </div>
+            </div>
+            <div class="pic col-md-4">
+                <div class="detail d-photo">
+                    <img class="d-details" id="photo" name="photo" [src]="doctorDetails[0].photo" />
+                </div>
+            </div>
+            <div class="edit-details-button">
+                <button class="editBtn" (click)="editDetails()">EDIT DETAILS</button>
+            </div>
+        </div>
+    </div>
+    <div class="client-Details" *ngIf="!isProfile">
+        <div class="clientListTitle">LIST OF CLIENTS</div>
+            <div ngbDropdown>
+                <button ngbDropdownToggle>{{value}}</button>
+                <div ngbDropdownMenu>
+                    <button ngbDropdownItem (click)="value='All'; filterBasedOnTaskStatus('all')">All</button>
+                    <button ngbDropdownItem (click)="value='Completed'; filterBasedOnTaskStatus('true')">Completed</button>
+                    <button ngbDropdownItem (click)="value='Not Completed'; filterBasedOnTaskStatus('')">Not Completed</button>
+                </div>
+            </div>
+        <div class="c-details" *ngFor="let client of clientData; let i=index">
+            <div class="detail">
+                <div class="main-detail" [ngClass]="detailsOfClient[i].isCollapsed ? 'main-detail-alignment' : ''">
+                    <label for="c-name">Name:</label>
+                    <p class="c-details-content">{{client.name}}&nbsp;{{client.lastname}}</p>
+                    <i class="bi arrow" [ngClass]="detailsOfClient[i].isCollapsed ? 'bi-caret-down' : 'bi-caret-up'" (click)="toggleDetails(i)"></i>
+                    <i class="bi bi-bell remainder" *ngIf="!detailsOfClient[i].isTaskCompleted" (click)="sendRemainder(i)" ngbTooltip="Send Reminder"></i>
+                </div>
+                <div class="sub-detail" [ngbCollapse]="detailsOfClient[i].isCollapsed" [ngClass]="!detailsOfClient[i].isTaskCompleted ? 'sub-detail-withbell' : ''">
+                    <label for="c-diagnosis">Diagnosis:</label>
+                    <p class="c-details-content">{{client.diagnosis}}</p>
+                    <button class="personal-details" (click)="personalDetails(client)">Personal Details</button>
+                    <button class="task-details" (click)="taskDetails(client)">Task Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit Doctor Details -->
+<ng-container *ngIf="isEditDetails">
+    <div [ngTemplateOutlet]="editModel"></div>
+</ng-container>
+
+<ng-template #editModel>
+    <div class="modal">
+        <button class="closeBtn" (click)="close()">X</button>
+        <div class="editdetailsTitle">EDIT DETAILS</div>
+        <div class="mainEditDetails">
+            <div class="detail">
+                <label class="col-md-3"for="name">Name:</label>
+                <input class="d-details d-detailsInput" id="name" name="name" [(ngModel)]="editName" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="specialization">Specialization:</label>
+                <input class="d-details d-detailsInput" id="specialization" name="specialization" [(ngModel)]="editSpecialization" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="designation">Designation:</label>
+                <input class="d-details d-detailsInput" id="designation" name="designation" [(ngModel)]="editDesignation" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="email">Email ID:</label>
+                <input class="d-details d-detailsInput" id="email" name="email" [(ngModel)]="editEmail" />
+            </div>
+            <div class="detail">
+                <label class="col-md-3"for="phonenumber">Phone Number:</label>
+                <input class="d-details d-detailsInput" id="phonenumber" name="phonenumber" [(ngModel)]="editPhonenumber" />
+            </div>
+        </div>
+        <button class="saveBtn" (click)="saveEditDetails()">Save</button>
+    </div>
+</ng-template>
+
+<!-- Client Personal Details Popup-->
+<ng-template #cPersonalModal>
+    <div class="personaldetailsmodal">
+        <button class="closeBtn personaldetailsCloseBtn" (click)="close()">X</button>
+        <div class="c-details c-details-personaldetails">
+            <div class="detail personaldetail">
+                <label for="c-age">Age:</label>
+                <p class="c-details-content">{{currentClient.age}}</p>
+                <label for="c-gender">Gender:</label>
+                <p class="c-details-content">{{currentClient.gender}}</p>
+                <label for="c-location">Location:</label>
+                <p class="c-details-content">{{currentClient.location}}</p>
+                <label for="c-phonenumber">Phone Number:</label>
+                <p class="c-details-content">{{currentClient.phonenumber}}</p>
+                <label for="c-email">Email ID:</label>
+                <p class="c-details-content">{{currentClient.email}}</p>
+                <label for="c-diagnosis">Diagnosis:</label>
+                <p class="c-details-content">{{currentClient.diagnosis}}</p>
+                <label for="c-startDate">Start Date:</label>
+                <p class="c-details-content">{{currentClient.startDate}}</p>
+                <label for="c-lastReview">Last Review:</label>
+                <p class="c-details-content">{{currentClient.lastReview}}</p>
+                <label for="c-actionTaken">Action Taken:</label>
+                <p class="c-details-content">{{currentClient.actionTaken}}</p>
+                <label for="c-assignedTask">Assigned Task:</label>
+                <p class="c-details-content">{{currentClient.assignedTask}}</p>
+                <label for="c-nextReview">Next Review:</label>
+                <p class="c-details-content">{{currentClient.nextReview}}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+<!-- Client Task Details Popup-->
+ <ng-template #cTaskModal>
+    <div class="personaldetailsmodal">
+        <button class="closeBtn personaldetailsCloseBtn" (click)="close()">X</button>
+        <div class="c-details c-details-personaldetails">
+            <div class="detail personaldetail">
+                <label for="c-taskContent">Task Details:</label>
+                <p class="c-details-content">{{currentClient.taskContent}}</p>
+            </div>
+        </div>
+    </div>
+</ng-template>
+
+

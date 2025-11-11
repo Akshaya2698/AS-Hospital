@@ -1,0 +1,17 @@
+<div class="mainFAQ">
+    <div class="title">FAQ's TO COME IN HANDY</div>
+        <div ngbAccordion [closeOthers]="true">
+            <div ngbAccordionItem *ngFor="let faq of faqContent">
+                <div ngbAccordionHeader class="header">
+                    <button ngbAccordionButton>
+                        <p class="question">{{faq.question}}</p>
+                    </button>
+                </div>
+                <div ngbAccordionCollapse>
+                    <div ngbAccordionBody>
+                        <div class="answer">{{faq.answer}}</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

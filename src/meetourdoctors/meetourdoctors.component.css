@@ -1,0 +1,97 @@
+.mainMeetOurDoctors {
+    position: relative;
+    height: 39vw;
+    width: 32vw;
+}
+
+.explore {
+    display: flex;
+    position: absolute;
+    left: 24vw;
+    top: 6vw;
+}
+
+.title {
+    position: relative;
+    left: 5.5vw;
+    font-size: 2vw;
+    font-weight: 700;
+    color: cadetblue;
+    width: 45vw;
+}
+
+.doc-bg-img {
+    width: 52vw;
+    border: 0.2vw solid cadetblue;
+}
+
+.explore-button {
+    position: absolute;
+    top: 19vw;
+    left: 23.5vw;
+    padding-bottom: 0.3vw;
+    border-color: cadetblue;
+    color: #1d7678;
+    font-weight: 600;
+}
+
+.explore-button:hover {
+    color: white;
+    background-color: cadetblue;
+}
+
+.explore-right-arrow {
+    position: relative;
+    top:0.1vw;
+}
+
+.exploring-doctors {
+    position: relative;
+    top: 7vw;
+    left: 42vw;
+}
+
+.doc-img {
+    width: 15vw;
+    border: 0.2vw solid cadetblue;
+}
+
+::ng-deep .carousel-indicators [data-bs-target] {
+    top: 20vw;
+    background-color: crimson;
+    width: 0.75vw;
+    height: 0.75vw;
+    border-radius: 50%;
+}
+
+::ng-deep .carousel-indicators {
+    top: 22vw;
+    margin-right: 0vw;
+    margin-left: 0vw;
+    width: 15vw;
+}
+
+.profile {
+    text-align: center;
+    width: 15vw;
+    padding-top: 1vw;
+}
+
+.profile p {
+    height: 0.5vw;
+    font-size: 1.1vw;
+}
+
+::ng-deep .carousel-control-prev {
+    left: -5vw;
+    top: 5vw;
+    width: 3vw;
+    filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}
+
+::ng-deep .carousel-control-next {
+    left: 17vw;
+    top: 5vw;
+    width: 3vw;
+    filter: invert(100%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%) !important;
+}

@@ -1,0 +1,17 @@
+<div class="mainHeader">
+    <div class="banner">
+        <div class="col-md-8">
+            <img class="logo" src="favicon.jpg" />
+            <button class="header-items home" [routerLink]="['/home']">Home</button>
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-3">
+            <button class="header-items" *ngIf="!(isloggedin$ | async) && !(signupSuccess$ | async)" (click)="signup()" (mouseover)="signUptooltip()" (mouseout)="signUptooltip()">SignUp</button>
+            <span class="custom-tooltip signupTooltip" *ngIf="isSignUpHover">Are you a new Client?</span>
+            <button class="header-items" *ngIf="!(isloggedin$ | async) && !(signupSuccess$ | async)" (click)="login()" (mouseover)="logintooltip()" (mouseout)="logintooltip()">Client Login</button>
+            <span class="custom-tooltip loginTooltip" *ngIf="isLoginHover">Welcome Back!</span>
+            <button class="header-items" *ngIf="!(isloggedin$ | async) && !(signupSuccess$ | async)" (click)="login('doctor')">Doctor Login</button>
+            <button class="header-items logout" *ngIf="(isloggedin$ | async) && !(signupSuccess$ | async)" (click)="logout()">Logout</button>
+        </div>
+    </div>  
+</div>

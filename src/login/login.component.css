@@ -1,0 +1,111 @@
+.mainLogin {
+    position: relative;
+    left: 39vw;
+    top: 9vw;
+    height: 26vw;
+    width: 25vw;
+}
+
+.title {
+    font-weight: 700;
+    color: cadetblue;
+    position: absolute;
+    top: -5vw;
+    font-size: 2vw;
+    left: 3vw;
+}
+
+.doctor-title {
+    left: 2.4vw;
+}
+
+.labelText {
+    margin-bottom: 0.5vw;
+}
+
+.mainLogin label {
+    font-weight: 500;
+    color: cadetblue;
+}
+
+.mainLogin input {
+    width: 20vw;
+    margin-bottom: 1vw;
+}
+
+.mainLogin input:focus-visible {
+    outline: none;
+}
+
+.pswd-eye {
+    position: relative;
+    left: -2vw;
+}
+
+.mandatory, .errormsg {
+    color: red;
+}
+
+.errormsg {
+    position: relative;
+    font-size: 1vw;
+    top: -0.3vw;
+    margin-bottom: 0vw;
+}
+
+.submit {
+    background-color: #5f9ea059;
+    border: none;
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.submit:hover {
+    background-color: #5f9ea0;
+    color: white;
+}
+
+.refresh-img {
+    width: 2vw;
+    height: 2vw;
+}
+
+.captcha button {
+    background: none;
+    border: none;
+    position: relative;
+    left: 1vw;
+    top: -0.2vw;
+    padding: 0vw;
+}
+
+#captcha-wrong {
+    top: -0.6vw;
+}
+
+#successfulPopup {
+    background-color: green;
+    color: white;
+    font-weight: 600;
+    left: 28vw;
+    top: -4vw;
+    position: absolute;
+    height: 5vw;
+    width: 22vw;
+    padding: 1.5vw;
+    text-align: center;
+}
+
+.forgotpwd {
+    border: none;
+    background-color: white;
+    color: cadetblue;
+    font-size: 1vw;
+    position: relative;
+    left: 12vw;
+    top: -1vw;
+}
+
+.forgotPswd {
+    height: 1vw;
+}

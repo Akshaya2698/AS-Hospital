@@ -1,0 +1,20 @@
+<!-- width fixed and slice carousel -->
+<div class="mainPartneredPharmacy">
+    <div class="title">OUR PARTNERED PHARAMCY</div>
+    <div class="carousel">
+        <div class="carousel-slides" [style.transform]="transform" *ngFor="let pharmacy of pharmacyList; let i=index">
+            <div class="pharmacy-details">
+                <p class="pharmacy-name">{{pharmacy.name}}</p>
+                <p class="pharmacy-desc">{{pharmacy.operatinghours}}</p>
+                <p class="pharmacy-desc">+91-{{pharmacy.contact}}</p>
+                <p class="pharmacy-desc">{{pharmacy.location}}</p>
+            </div>
+        </div>
+    </div>
+    <button class="prev" (click)="previous()" [disabled]="isDisableLeft ? true : false">
+        <i class="bi bi-chevron-left" [ngClass]="isDisableLeft ? 'disabledArrow' : 'enabledArrow'"></i>
+    </button>
+    <button class="next" (click)="next()" [disabled]="isDisableRight ? true : false">
+        <i class="bi bi-chevron-right" [ngClass]="isDisableRight ? 'disabledArrow' : 'enabledArrow'"></i>
+    </button>
+</div>

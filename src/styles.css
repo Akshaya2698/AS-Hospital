@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0vw;
+    font-size: 1.25vw;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.scroll-lock {
+    overflow: hidden;
+}

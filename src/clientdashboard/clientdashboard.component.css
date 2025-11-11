@@ -1,0 +1,355 @@
+.mainClientDashboard {
+    position: relative;
+    height: 77vw;
+    left: 5vw;
+    top: 13vw;
+    width: 88vw;
+}
+
+.title {
+    font-weight: 700;
+    color: cadetblue;
+    position: absolute;
+    top: -12vw;
+    font-size: 2vw;
+    left: 34vw;
+}
+
+.client-Details {
+    display: flex;
+    background-color: aliceblue;
+    position: relative;
+    top: -6vw;
+    padding: 4vw;
+}
+
+.detail {
+    display: flex;
+}
+
+.c-details {
+    color: #72325e;
+    font-size: 1.2vw;
+    position: relative;
+    top: 0.1vw;
+    left: 0.4vw;
+}
+
+.detail label, .datePickerTitle {
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.editBtn {
+    background-color: cadetblue;
+    color: white;
+    width: 10vw;
+    border-radius: 10vw;
+    border: 0.15vw solid #07936a
+}
+
+.edit-details-button {
+    position: relative;
+    top: -3vw;
+    left: -7vw;
+    height: 4vw;
+}
+
+.editBtn:hover {
+    color: cadetblue;
+    background-color: white;
+    font-weight: 700;
+}
+
+.modifydateBtn {
+    color: cadetblue;
+    border: none;
+    background: none;
+    text-decoration: underline;
+    position: relative;
+    left: -0.5vw;
+}
+
+.modifydateBtn:hover {
+    color: purple;
+    cursor: pointer;
+}
+
+.datePickerPopup {
+    width: 40vw;
+    height: 20vw;
+    background-color: aliceblue;
+    box-shadow: 0.5vw 0.5vw 1vw #bd90e7;
+    z-index: 10;
+    position: relative;
+    left: 28vw;
+    top: -71vw;
+    padding: 3vw;
+}
+
+.datePickerTitle {
+    text-align: center;
+    font-size: 2vw;
+    font-weight: 700;
+    box-shadow: 0.5vw 0.5vw 1vw;
+}
+
+.datePickerField {
+    width: 12vw;
+    position: relative;
+    left: 12vw;
+    top: 3vw;
+}
+
+.datePickerInputField {
+    color: #72325e;
+    border: 0.1vw solid cadetblue;
+    font-size: 1.2vw;
+    padding: 0.4vw;
+}
+
+.closeBtn {
+    width: 2vw;
+    height: 2vw;
+    text-align: center;
+    font-size: 1.5vw;
+    position: relative;
+    left: 34vw;
+    top: -2vw;
+    font-weight: 600;
+    color: cadetblue;
+    border: none;
+    background-color: transparent;
+}
+
+.closeBtn:hover {
+    background-color: white;
+    box-shadow: 0vw 0.2vw 0.3vw cadetblue;
+}
+
+.datePickerBtns {
+    display: flex;
+    position: relative;
+    top: 5vw;
+    left: 25vw;
+}
+
+.submitBtn {
+    color: white;
+    background-color: cadetblue;
+    border-radius: 3vw;
+    margin-right: 1vw;
+    width: 5vw;
+    border: none;
+}
+
+.datePickerBtns .close-Btn {
+    background-color: crimson;
+}
+
+.submitBtn:hover {
+    color: cadetblue;
+    background-color: white;
+    box-shadow: 0vw 0.2vw 0.3vw cadetblue;
+}
+
+.submitBtn:focus-visible {
+    border: none;
+}
+
+.datePickerBtns .close-Btn:hover {
+    color: crimson;
+    background-color: white;
+    box-shadow: 0vw 0.2vw 0.3vw crimson;
+}
+
+.background-blur-active {
+    filter: blur(4px) opacity(0.7);
+    transition: filter 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.taskDashboard {
+    box-shadow: 0.5vw 0.5vw 1vw rebeccapurple;
+    position: relative;
+    top: -4vw;
+    min-height: 35vw;
+}
+
+.taskDashboardTitle {
+    text-align: center;
+    color: purple;
+    font-size: 2vw;
+    font-weight: 600;
+}
+
+.dateOfTask {
+    position: relative;
+    width: 10vw;
+    left: 75vw;
+    font-size: 1.2vw;
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.taskDetails {
+    margin-top: 1vw;
+}
+
+.taskDetails textarea::placeholder {
+    color: cadetblue;
+}
+
+.taskDetails textarea {
+    color: rebeccapurple;
+    width: 82vw;
+    height: 15vw;
+    left: 3vw;
+    position: relative;
+    padding: 1vw;
+}
+
+.msg {
+    color: #72325e;
+    font-size: 1vw;
+    position: relative;
+    top: 1vw;
+    left: 4.7vw;
+}
+
+.infoBtn {
+    width: 1.5vw;
+    height: 1.5vw;
+    position: relative;
+    top: -0.1vw;
+}
+
+.taskSubmitBtn, .saveBtn {
+    color: white;
+    background-color: rebeccapurple;
+    font-size: 1.2vw;
+    border: none;
+    border-radius: 3vw;
+    margin-right: 1vw;
+    width: 5vw;
+}
+
+.taskSubmitBtn:hover, .saveBtn:hover {
+    background-color: white;
+    color: rebeccapurple;
+    box-shadow: 0.5vw 0.5vw 1vw rebeccapurple;
+}
+
+.subBtn {
+    position: relative; 
+    left: 64vw;
+    top: 3vw;
+}
+
+.subBtn:disabled {
+    background-color: #66339947;
+    pointer-events: none;
+}
+
+.taskResetBtn {
+    background-color: crimson;
+    position: relative;
+    left: 64vw;
+    top: 3vw;
+}
+
+.taskResetBtn:hover {
+    color: crimson;
+    box-shadow: 0.5vw 0.5vw 1vw crimson;
+}
+
+.taskSaveBtn, .saveBtn {
+    background-color: cadetblue;
+    position: relative;
+    top: -1vw;
+}
+
+.taskSaveBtn:hover, .saveBtn:hover {
+    color: cadetblue;
+    box-shadow: 0.5vw 0.5vw 1vw cadetblue;
+}
+
+.status {
+    position: relative;
+    left: 3vw;
+    top: 1vw;
+    font-size: 1.2vw;
+    color: rebeccapurple;
+    font-weight: 500;
+}
+
+.status input {
+    cursor: pointer;
+}
+
+.taskBtns {
+    position: relative;
+    top: 3vw;
+    left: 4.4vw;
+}
+
+.errormsg {
+    position: relative;
+    font-size: 1vw;
+    color: red;
+    left: 3vw;
+}
+
+.taskCompleted {
+    font-size: 3vw;
+    color: cadetblue;
+    position: relative;
+    text-align: center;
+    top: 8vw;
+}
+
+.modal {
+    display: block;
+    width: 50vw;
+    height: 28vw;
+    position: relative;
+    left: 24vw;
+    top: -71vw;
+    background-color: white;
+    box-shadow: 0.5vw 0.5vw 1vw cadetblue;
+    padding: 1vw;
+    padding-bottom: 5vw;
+}
+
+.editdetailsTitle {
+    text-align: center;
+    font-size: 2vw;
+    color: cadetblue;
+    font-weight: 600;
+}
+
+.modal .closeBtn {
+    left: 45vw;
+    top: 0.5vw;
+}
+
+.mainEditDetails .detail {
+    margin-top: 1vw;
+    position: relative;
+    left: 11vw;
+    top: 1vw;
+}
+
+.saveBtn {
+    top: 4vw;
+    left: 21vw;
+}
+
+.alertRemainder {
+    position: relative;
+    top: -5vw;
+    text-align: center;
+    background-color: crimson;
+    color: white;
+    font-weight: 600;
+}

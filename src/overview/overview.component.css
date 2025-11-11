@@ -1,0 +1,97 @@
+.mainOverview {
+    width: 85vw;
+    position: relative;
+    left: 8vw;
+    height: 39vw;
+}
+
+.title {
+    position: absolute;
+    left: 15vw;
+    font-size: 2.5vw;
+    font-weight: 700;
+    color: cadetblue;
+    top: 2vw;
+}
+
+.sub-title {
+    position: relative;
+    top: 7.5vw;
+    color: rebeccapurple;
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.description {
+    position: relative; 
+    top: 13vw;
+    left: 3vw;
+    display: flex;
+}
+
+.box {
+    width: 25vw;
+    height: 15vw;
+    border-radius: 3vw;
+    border: 0.1vw solid lightblue;
+    border-top: 0.3vw solid cadetblue!important;
+    margin-right: 5vw;
+    cursor: pointer;
+}
+
+.box:hover {
+    border: 0.2vw dashed cadetblue;
+}
+
+.description .title {
+    font-size: 1.3vw;
+    position: relative;
+    top: 1vw;
+}
+
+.description .content {
+    font-size: 1vw;
+    position: relative;
+    top: 3vw;
+    padding: 0vw 2vw 2vw 2vw;
+    text-align: center;
+    color: cadetblue;
+    width: 23vw;
+}
+
+.box-1 .title {
+    left: 4.5vw;
+}
+
+.box-2 .title {
+    left: 4vw;
+}
+
+.box-3 .title {
+    left: 6vw;
+}
+
+.images img {
+    position: relative;
+    top: -6vw;
+    height: 24vw;
+    width: 28vw;
+}
+
+.img2 {
+    left: 29vw;
+}
+
+.img3 {
+    left: 57vw;
+}
+
+.info {
+    position: relative;
+    top: 8vw;
+    left: 31vw;
+    width: 22vw;
+    color: crimson;
+    font-size: 1.2vw;
+    font-style: italic;
+}
